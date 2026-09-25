@@ -144,6 +144,17 @@ const About = () => {
                         <p className="text-sm text-gray-500 dark:text-white">
                             Version {version}
                         </p>
+                        <p className="text-sm">
+                            <a
+                                href="https://rotatocam.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-500 underline inline-flex items-center gap-1"
+                            >
+                                rotatocam.com
+                                <FaExternalLinkAlt />
+                            </a>
+                        </p>
                     </div>
                 </div>
                 <div className="flex flex-col items-end gap-2 text-sm">
@@ -175,7 +186,17 @@ const About = () => {
                 of capabilities for advanced users. Many thousands of people
                 trust gSender to control their grbl and grblHAL-based CNCs every
                 day, and they keep coming back for its ease of use, engaged
-                community, and reliability.
+                community, and reliability. This Raspberry Pi build is a{' '}
+                <a
+                    href="https://rotatocam.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 underline"
+                >
+                    RotatoCAM
+                </a>{' '}
+                preview: the rotary preview follows Y, and posted Z-zero
+                metadata is read automatically.
             </p>
 
             <div>

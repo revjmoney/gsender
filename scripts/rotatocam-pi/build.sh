@@ -3,6 +3,13 @@ set -euo pipefail
 [[ $(uname -m) == aarch64 ]]
 apt-get update -qq
 apt-get install -y --no-install-recommends libudev-dev ruby ruby-dev xvfb xauth libgtk-3-0 libnss3 libasound2 libgbm1 libxss1 libatk-bridge2.0-0
+# serialport scans ports by spawning udevadm. libudev-dev does not ship that
+# binary, and a missing or failing udevadm aborts the ARM64 binding check.
+apt-get install -y --no-install-recommends udev || true
+if ! command -v udevadm >/dev/null 2>&1 || ! timeout 10s udevadm info -e >/dev/null 2>&1; then
+    printf '%s\n' '#!/bin/sh' 'exit 0' > /usr/local/bin/udevadm
+    chmod 755 /usr/local/bin/udevadm
+fi
 gem install fpm --no-document
 yarn install --ignore-scripts --non-interactive
 export PATH="$PWD/node_modules/.bin:$PATH"

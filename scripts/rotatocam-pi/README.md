@@ -1,4 +1,6 @@
-# gSender RotatoCAM Preview — Raspberry Pi 4 ARM64
+# gSender RotatoCAM Preview, Raspberry Pi 4 ARM64
+
+https://rotatocam.com
 
 Normal gSender desktop app with Y-aligned rotary preview selected by default
 and automatic RotatoCAM Z-zero metadata reading. Rotary controls and "Use
