@@ -1,0 +1,24 @@
+{
+  "extends": null,
+  "appId": "com.rotatocam.gsender.preview",
+  "productName": "gSender RotatoCAM Preview",
+  "directories": {"app": "dist/gsender", "output": "pi-desktop"},
+  "extraMetadata": {
+    "name": "gsender-rotatocam-preview",
+    "version": "1.6.4-rotatocam.959",
+    "main": "desktop.cjs",
+    "description": "RotatoCAM gSender rotary preview build"
+  },
+  "npmRebuild": false,
+  "asar": true,
+  "asarUnpack": ["**/*.node", "**/*.{so,dylib,exe}"],
+  "files": ["**/*", "!**/*.map", "!runtime/**", "!launch.cjs", "!*.sh"],
+  "linux": {
+    "target": ["deb"],
+    "executableName": "gsender-rotatocam-preview",
+    "icon": "electron-build/icon-round.png",
+    "category": "Utility",
+    "maintainer": "Rev. J. Money <myemail937@gmail.com>"
+  },
+  "publish": null
+}

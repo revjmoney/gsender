@@ -1751,7 +1751,7 @@ export const SettingsMenu: SettingsMenuSection[] = [
 						label: "Rotary preview axis",
 						key: "widgets.visualizer.rotaryPreviewAxis",
 						description:
-							"Axis parallel to the rotary centerline for A-axis G0/G1 previews. Changes the preview only. (Default X)",
+							"Axis parallel to the rotary centerline for A-axis G0/G1 previews. Changes the preview only. (Default Y in this RotatoCAM build)",
 						type: "select",
 						options: ["X", "Y"],
 						onApply: () => {

@@ -1,0 +1,25 @@
+name: RotatoCAM Pi 4 desktop package
+on:
+  push:
+    branches: [rotatocam/pi4-preview-package]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-24.04-arm
+    container: node:24-bookworm
+    timeout-minutes: 35
+    env:
+      NODE_OPTIONS: --max-old-space-size=8192
+      ELECTRON_SKIP_BINARY_DOWNLOAD: '1'
+      USE_SYSTEM_FPM: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and smoke-test ARM64 package
+        run: bash scripts/rotatocam-pi/build.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gsender-rotatocam-pi4-arm64
+          path: pi-release/*
+          retention-days: 30

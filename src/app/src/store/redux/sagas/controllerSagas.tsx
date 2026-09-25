@@ -295,7 +295,7 @@ export function* initialize(): Generator<any, void, any> {
         );
         const rotaryPreviewAxis = store.get(
             'widgets.visualizer.rotaryPreviewAxis',
-            'X',
+            'Y',
         );
         const rotaryCenterlineZ = store.get(
             'widgets.visualizer.rotaryCenterlineZ',
