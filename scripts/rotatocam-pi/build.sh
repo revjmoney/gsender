@@ -5,6 +5,7 @@ apt-get update -qq
 apt-get install -y --no-install-recommends libudev-dev ruby ruby-dev xvfb xauth libgtk-3-0 libnss3 libasound2 libgbm1 libxss1 libatk-bridge2.0-0
 gem install fpm --no-document
 yarn install --ignore-scripts --non-interactive
+export PATH="$PWD/node_modules/.bin:$PATH"
 node scripts/package-sync.js
 mkdir -p dist/gsender
 cp src/package.json dist/gsender/package.json

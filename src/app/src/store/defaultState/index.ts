@@ -165,7 +165,7 @@ const defaultState: State = {
             defaultFirmwareSettings: DEFAULT_FIRMWARE_SETTINGS,
             forceHardLimits: false,
             forceSoftLimits: false,
-            useAaxisForGrbl: false,
+            useAaxisForGrbl: true,
         },
         shouldWarnZero: false,
         diagnostics: {
@@ -356,7 +356,7 @@ const defaultState: State = {
                 },
             },
             tab: {
-                show: false,
+                show: true,
             },
         },
         spindle: {

@@ -1,7 +1,9 @@
 # gSender RotatoCAM Preview — Raspberry Pi 4 ARM64
 
 Normal gSender desktop app with Y-aligned rotary preview selected by default
-and automatic RotatoCAM Z-zero metadata reading. Includes the PR 959 changes.
+and automatic RotatoCAM Z-zero metadata reading. Rotary controls and "Use
+A-axis for grbl" are enabled for FluidNC's independent A axis; the workspace
+stays in normal four-axis operation, without repurposing Y. Includes PR 959.
 Connect to the FluidNC card using the usual gSender connection controls.
 No separate browser, headless service, or kiosk is required.
 

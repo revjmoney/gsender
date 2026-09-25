@@ -17,6 +17,9 @@ autoUpdater.checkForUpdates = async () => null;
 autoUpdater.downloadUpdate = async () => [];
 autoUpdater.quitAndInstall = () => {};
 if (process.env.ROTATOCAM_SMOKE_TEST === '1') {
+    // Electron has already consumed the CI-only Chromium flags; do not pass
+    // those flags to gSender's separate Commander argument parser.
+    process.argv = [process.argv[0]];
     app.on('browser-window-created', (_event, window) => {
         window.webContents.on('did-finish-load', () => {
             if (window.webContents.getURL().startsWith('http://127.0.0.1:')) {
